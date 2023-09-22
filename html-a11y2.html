@@ -10,6 +10,7 @@
         font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
         padding: 1em;
         margin: 0;
+        display: flex;
       }
 
       * {
@@ -18,34 +19,49 @@
 
       form {
         width: 400px;
-      }
-
-      li {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: center;
+        margin: 0 auto;
         margin-bottom: 20px;
       }
+
+.name,.age,.email {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+label, input {
+  display: flex;
+  margin: .5rem;
+  justify-content: space-between;
+}
+label {
+  align-self: flex-start;
+}
+input {
+  align-self: flex-end;
+}
     </style>
   </head>
 
   <body>
 
     <form>
-      <ul>
-        <li>
-          Name
-          <input type="text" name="name">
-        </li>
-        <li>
-          Age
-          <input type="number" name="age">
-        </li>
-        <li>
-          Email address
-          <input type="email" name="email">
-        </li>
-      </ul>
+    
+      <div class="name">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name">
+     </div>
+     <div class="age">
+          <label for="age">Age:</label>
+          <input type="text" id="age" name="age">
+      </div>
+      <div class="email">
+          <label for="email">Email address:</label>
+          <input type="text" id="email" name="email">
+      </div>
+   
     </form>
 
   </body>
